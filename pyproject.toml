@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "inria_ml_helloworld"
+version = "0.0.1"
+description = "A ML hello world to be (re)used by Inria Chile"
+authors = ["Inria Chile"]
+
+packages = [{ include = "inria" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = ">=1.11.0"
+wandb = "*"
+torchvision = "*"
+pytorch-lightning = "*"
+lightning-bolts = "*"
+
+[tool.poetry.dev-dependencies]
+black = {extras = ["jupyter"], version = ">=21.12b0"}
+flake8 = "^3.8.3"
+bandit = "1.6.2"
+notebook = "^6.0.3"
+ipywidgets = "^7.5.1"
+pytest = "^6.0.1"
+pytest-cov = "^2.10.1"
+ipykernel = "^6.5.1"
+pandas = "^1.3.5"
+
+[tool.black]
+line-length = 127
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+junit_family = "xunit2"
+log_cli = true
+log_cli_level = "INFO"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
